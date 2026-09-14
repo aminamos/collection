@@ -1,4 +1,4 @@
-A collection of metadata associated with the collection of the [Minneapolis Institute of Art](http://artsmia.org/).
+A collection of metadata associated with the collection of the [Minneapolis Institute of Art](https://artsmia.org/).
 
 [Mia's mission](http://new.artsmia.org/about/museum-info/mission-and-history/) is to enrich the community
 
@@ -81,11 +81,11 @@ Each record lives at `objects/$bucket/$id.json`, where 'bucket' is `object id / 
 }
 ```
 
-[`objects/0/17.json`]: https://github.com/artsmia/collection/blob/master/objects/0/17.json
+[`objects/0/17.json`]: https://github.com/artsmia/collection/blob/main/objects/0/17.json
 
 ### Images
 
-**Images aren't included under the same license as this metadata**. Reference images are available under Mia's [Image Access & Use](http://new.artsmia.org/visit/policies-guidelines/#image_access_and_use) policy.
+**Images aren't included under the same license as this metadata**. Reference images are available under Mia's [Image Access & Use](https://new.artsmia.org/visit/policies-guidelines) policy.
 
 There aren't images of every object in the collection. Of the objects
 that have been photographed, some are restricted by copyright.
@@ -95,7 +95,9 @@ that have been photographed, some are restricted by copyright.
 
 Feel free to use unrestricted images for "limited non-commercial and educational purposes". When the copyright owner of an artwork is known, it will be in `"image_copyright": "…"`. [Commercial licensing is handled through Bridgeman Images](http://www.bridgemanimages.com/en-GB/collections/collection/minneapolis-institute-of-arts/).
 
-Image thumbnails are accessible by their `object id` in three sizes: `http://api.artsmia.org/images/$id/{small,medium,large}.jpg`. Small images are `100px` on the long side, medium images `600px` and large images `800px`.
+Image renditions are accessible on Mia's image CDN in multiple resolutions:
+* Direct CDN: `https://1.api.artsmia.org/{400,800,full}/$id.jpg` (or round-robin `https://${id%7}.api.artsmia.org/{400,800,full}/$id.jpg`)
+* Modern object cache CDN: `https://img.artsmia.org/web_objects_cache/${Cache_Location}/${Primary_RenditionNumber}_{400,800,full}.jpg`
 
 ### Exhibitions
 
